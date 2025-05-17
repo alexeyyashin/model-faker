@@ -1,0 +1,21 @@
+{
+    "name": "alexeyyashin/model-faker",
+    "description": "seed-faker based model filler",
+    "type": "library",
+    "require": {
+        "php": ">=8.0",
+        "alexeyyashin/seed-faker": "^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AlexeyYashin\\ModelFaker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexey Yashin",
+            "email": "me@alexey-yashin.ru"
+        }
+    ]
+}
