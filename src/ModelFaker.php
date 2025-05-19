@@ -122,12 +122,11 @@ class ModelFaker
         $i = 0;
 
         foreach ($reflection->getMethods(ReflectionProperty::IS_PUBLIC) as $method) {
-            if (str_starts_with(strtolower($method->getName()), 'set')) {
-
-                if ($method->isStatic()) {
-                    continue;
-                }
-
+            if (
+                !$method->isStatic()
+                && strtolower($method->getName()) !== 'set'
+                && str_starts_with(strtolower($method->getName()), 'set')
+            ) {
                 if (array_key_exists($method->getName(), $this->methodNameRules)) {
                     $model->{$method->getName()}($this->methodNameRules[$method->getName()]());
                     $i++;
